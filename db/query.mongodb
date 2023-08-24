@@ -1,0 +1,459 @@
+use("db_zoo");
+db.createCollection("Animals");
+db.Animals.insertMany([
+    {
+        "Animal_ID": "A001",
+        "Name": "Leo",
+        "Species": "S001",
+        "Date_Of_Birth": "2018-05-15",
+        "Gender": "Male",
+        "Enclosure": "E001"
+    },
+    {
+        "Animal_ID": "A002",
+        "Name": "Luna",
+        "Species": "S002",
+        "Date_Of_Birth": "2020-02-10",
+        "Gender": "Female",
+        "Enclosure": "E002"
+    },
+    {
+        "Animal_ID": "A003",
+        "Name": "Rocky",
+        "Species": "S003",
+        "Date_Of_Birth": "2019-08-20",
+        "Gender": "Male",
+        "Enclosure": "E003"
+    },
+    {
+        "Animal_ID": "A004",
+        "Name": "Bella",
+        "Species": "S002",
+        "Date_Of_Birth": "2018-11-03",
+        "Gender": "Female",
+        "Enclosure": "E002"
+    },
+    {
+        "Animal_ID": "A005",
+        "Name": "Max",
+        "Species": "S003",
+        "Date_Of_Birth": "2021-04-25",
+        "Gender": "Male",
+        "Enclosure": "E003"
+    },
+    {
+        "Animal_ID": "A006",
+        "Name": "Coco",
+        "Species": "S001",
+        "Date_Of_Birth": "2022-01-12",
+        "Gender": "Male",
+        "Enclosure": "E001"
+    },
+    {
+        "Animal_ID": "A007",
+        "Name": "Mia",
+        "Species": "S002",
+        "Date_Of_Birth": "2019-06-08",
+        "Gender": "Female",
+        "Enclosure": "E002"
+    },
+    {
+        "Animal_ID": "A008",
+        "Name": "Shadow",
+        "Species": "S003",
+        "Date_Of_Birth": "2020-09-17",
+        "Gender": "Male",
+        "Enclosure": "E003"
+    },
+    {
+        "Animal_ID": "A009",
+        "Name": "Lola",
+        "Species": "S001",
+        "Date_Of_Birth": "2017-12-30",
+        "Gender": "Female",
+        "Enclosure": "E001"
+    },
+    {
+        "Animal_ID": "A010",
+        "Name": "Rocky Jr.",
+        "Species": "S003",
+        "Date_Of_Birth": "2023-02-08",
+        "Gender": "Male",
+        "Enclosure": "E003"
+    }
+]);
+
+use("db_zoo");
+db.createCollection("Employees");
+db.Employees.insertMany([
+    {
+        "Employee_ID": "E001",
+        "Name": "John Smith",
+        "Position": "Zookeeper",
+        "Hiring_Date": "2017-03-01",
+        "Salary": "40,000"
+    },
+    {
+        "Employee_ID": "E002",
+        "Name": "Emily Johnson",
+        "Position": "Veterinarian",
+        "Hiring_Date": "2019-08-15",
+        "Salary": "60,000"
+    },
+    {
+        "Employee_ID": "E003",
+        "Name": "Michael Brown",
+        "Position": "Curator",
+        "Hiring_Date": "2015-11-10",
+        "Salary": "70,000"
+    },
+    {
+        "Employee_ID": "E004",
+        "Name": "Jessica Williams",
+        "Position": "Zookeeper",
+        "Hiring_Date": "2020-02-20",
+        "Salary": "42,000"
+    },
+    {
+        "Employee_ID": "E005",
+        "Name": "Daniel Martinez",
+        "Position": "Veterinarian",
+        "Hiring_Date": "2018-06-10",
+        "Salary": "62,000"
+    },
+    {
+        "Employee_ID": "E006",
+        "Name": "Stephanie Adams",
+        "Position": "Curator",
+        "Hiring_Date": "2016-09-05",
+        "Salary": "75,000"
+    },
+    {
+        "Employee_ID": "E007",
+        "Name": "David Wilson",
+        "Position": "Zookeeper",
+        "Hiring_Date": "2022-04-12",
+        "Salary": "38,000"
+    },
+    {
+        "Employee_ID": "E008",
+        "Name": "Rachel Lee",
+        "Position": "Veterinarian",
+        "Hiring_Date": "2017-07-28",
+        "Salary": "65,000"
+    },
+    {
+        "Employee_ID": "E009",
+        "Name": "Christopher Turner",
+        "Position": "Curator",
+        "Hiring_Date": "2019-11-02",
+        "Salary": "72,000"
+    },
+    {
+        "Employee_ID": "E010",
+        "Name": "Olivia Harris",
+        "Position": "Zookeeper",
+        "Hiring_Date": "2021-01-15",
+        "Salary": "41,000"
+    }
+]);
+
+use("db_zoo");
+db.createCollection("Species");
+db.Species.insertMany([
+    {
+        "Species_ID": "S001",
+        "Scientific_Name": "Panthera leo",
+        "Description": "The lion is a large felid species with a majestic mane."
+    },    
+    {
+        "Species_ID": "S002",
+        "Scientific_Name": "Ursus arctos",
+        "Description": "The brown bear is a powerful omnivore found in various habitats."
+    },
+    {
+        "Species_ID": "S003",
+        "Scientific_Name": "Elephas maximus",
+        "Description": "The Asian elephant is the largest land animal in Asia."
+    },
+    {
+        "Species_ID": "S004",
+        "Scientific_Name": "Panthera tigris",
+        "Description": "The tiger is a large carnivore known for its distinctive stripes."
+    },    
+    {
+        "Species_ID": "S005",
+        "Scientific_Name": "Gorilla beringei",
+        "Description": "The mountain gorilla is a gentle giant of the primate world."
+    },
+    {
+        "Species_ID": "S006",
+        "Scientific_Name": "Canis lupus",
+        "Description": "The gray wolf is a highly adaptable predator with complex social structures."
+    },
+    {
+        "Species_ID": "S007",
+        "Scientific_Name": "Phocoena sinus",
+        "Description": "The vaquita is a critically endangered porpoise species found in the Gulf of California."
+    },
+    {
+        "Species_ID": "S008",
+        "Scientific_Name": "Ailuropoda melanoleuca",
+        "Description": "The giant panda is a beloved symbol of conservation efforts."
+    },
+    {
+        "Species_ID": "S009",
+        "Scientific_Name": "Ara ararauna",
+        "Description": "The blue and gold macaw is a vibrant parrot species known for its colorful plumage."
+    },
+    {
+        "Species_ID": "S010",
+        "Scientific_Name": "Panthera pardus",
+        "Description": "The leopard is a cunning and adaptable big cat found across a range of habitats."
+    }
+]);
+
+use("db_zoo");
+db.createCollection("Enclosures");
+db.Enclosures.insertMany([
+    {
+        "Enclosure_ID": "E001",
+        "Name": "Lion Habitat",
+        "Habitat_Type": "Savanna",
+        "Maximum_Capacity": 5
+    },
+    {
+        "Enclosure_ID": "E002",
+        "Name": "Bear Den",
+        "Habitat_Type": "Forest",
+        "Maximum_Capacity": 3
+    },
+    {
+        "Enclosure_ID": "E003",
+        "Name": "Elephant Sanctuary",
+        "Habitat_Type": "Grassland",
+        "Maximum_Capacity": 8
+    },
+    {
+        "Enclosure_ID": "E004",
+        "Name": "Tiger Territory",
+        "Habitat_Type": "Jungle",
+        "Maximum_Capacity": 4
+    },
+    {
+        "Enclosure_ID": "E005",
+        "Name": "Gorilla Habitat",
+        "Habitat_Type": "Rainforest",
+        "Maximum_Capacity": 6
+    },
+    {
+        "Enclosure_ID": "E006",
+        "Name": "Wolf Enclosure",
+        "Habitat_Type": "Tundra",
+        "Maximum_Capacity": 7
+    },
+    {
+        "Enclosure_ID": "E007",
+        "Name": "Marine Exhibit",
+        "Habitat_Type": "Aquarium",
+        "Maximum_Capacity": 10
+    },
+    {
+        "Enclosure_ID": "E008",
+        "Name": "Panda Pavilion",
+        "Habitat_Type": "Bamboo Forest",
+        "Maximum_Capacity": 2
+    },
+    {
+        "Enclosure_ID": "E009",
+        "Name": "Aviary",
+        "Habitat_Type": "Sky",
+        "Maximum_Capacity": 15
+    },
+    {
+        "Enclosure_ID": "E010",
+        "Name": "Leopard Lair",
+        "Habitat_Type": "Grassland",
+        "Maximum_Capacity": 4
+    }
+]);
+
+use("db_zoo");
+db.createCollection("Visitors");
+db.Visitors.insertMany([
+    {
+        "Visitor_ID": "V001",
+        "Name": "Maria Rodriguez",
+        "Visit_Date": "2023-07-20",
+        "Group_Size": 4,
+        "Contact": "maria@example.com"
+    },
+    {
+        "Visitor_ID": "V002",
+        "Name": "Robert Johnson",
+        "Visit_Date": "2023-08-05",
+        "Group_Size": 2,
+        "Contact": "robert@example.com"
+    },
+    {
+        "Visitor_ID": "V003",
+        "Name": "Sarah Thompson",
+        "Visit_Date": "2023-06-10",
+        "Group_Size": 6,
+        "Contact": "sarah@example.com"
+    },
+    {
+        "Visitor_ID": "V004",
+        "Name": "Daniel Martinez",
+        "Visit_Date": "2023-07-28",
+        "Group_Size": 3,
+        "Contact": "daniel@example.com"
+    },
+    {
+        "Visitor_ID": "V005",
+        "Name": "Emily Brown",
+        "Visit_Date": "2023-08-12",
+        "Group_Size": 5,
+        "Contact": "emily@example.com"
+    },
+    {
+        "Visitor_ID": "V006",
+        "Name": "James Wilson",
+        "Visit_Date": "2023-06-25",
+        "Group_Size": 1,
+        "Contact": "james@example.com"
+    },
+    {
+        "Visitor_ID": "V007",
+        "Name": "Jessica Smith",
+        "Visit_Date": "2023-07-15",
+        "Group_Size": 2,
+        "Contact": "jessica@example.com"
+    },
+    {
+        "Visitor_ID": "V008",
+        "Name": "Christopher Davis",
+        "Visit_Date": "2023-08-02",
+        "Group_Size": 4,
+        "Contact": "christopher@example.com"
+    },
+    {
+        "Visitor_ID": "V009",
+        "Name": "Amanda Taylor",
+        "Visit_Date": "2023-06-18",
+        "Group_Size": 7,
+        "Contact": "amanda@example.com"
+    },
+    {
+        "Visitor_ID": "V010",
+        "Name": "Michael Anderson",
+        "Visit_Date": "2023-08-20",
+        "Group_Size": 2,
+        "Contact": "michael@example.com"
+    }
+]);
+
+use("db_zoo");
+db.createCollection("Purchases");
+db.Purchases.insertMany([
+    {
+        "Purchase_ID": "P001",
+        "Visitor_ID": "V001",
+        "Purchase_Date_and_Time": "2023-07-20 15:30",
+        "Total_Amount": "50.00",
+        "Purchased_Items": [
+            "Souvenir T-shirt",
+            "Zoo Map"
+        ]
+    },
+    {
+        "Purchase_ID": "P002",
+        "Visitor_ID": "V002",
+        "Purchase_Date_and_Time": "2023-08-05 11:45",
+        "Total_Amount": "30.50",
+        "Purchased_Items": [
+            "Animal Feeding Experience",
+            "Postcards"
+        ]
+    },
+    {
+        "Purchase_ID": "P003",
+        "Visitor_ID": "V003",
+        "Purchase_Date_and_Time": "2023-06-10 14:20",
+        "Total_Amount": "75.25",
+        "Purchased_Items": [
+            "Family Pass",
+            "Ice Cream"
+        ]
+    },
+    {
+        "Purchase_ID": "P004",
+        "Visitor_ID": "V004",
+        "Purchase_Date_and_Time": "2023-07-28 13:15",
+        "Total_Amount": "22.75",
+        "Purchased_Items": [
+            "Safari Hat",
+            "Water Bottle"
+        ]
+    },
+    {
+        "Purchase_ID": "P005",
+        "Visitor_ID": "V005",
+        "Purchase_Date_and_Time": "2023-08-12 16:00",
+        "Total_Amount": "45.80",
+        "Purchased_Items": [
+            "Wildlife Photography Book",
+            "Plush Toy"
+        ]
+    },
+    {
+        "Purchase_ID": "P006",
+        "Visitor_ID": "V006",
+        "Purchase_Date_and_Time": "2023-06-25 10:10",
+        "Total_Amount": "12.50",
+        "Purchased_Items": [
+            "Pencil Set",
+            "Keychain"
+        ]
+    },
+    {
+        "Purchase_ID": "P007",
+        "Visitor_ID": "V007",
+        "Purchase_Date_and_Time": "2023-07-15 14:50",
+        "Total_Amount": "18.00",
+        "Purchased_Items": [
+            "Animal Stickers",
+            "Magnifying Glass"
+        ]
+    },
+    {
+        "Purchase_ID": "P008",
+        "Visitor_ID": "V008",
+        "Purchase_Date_and_Time": "2023-08-02 12:30",
+        "Total_Amount": "60.20",
+        "Purchased_Items": [
+            "Zoo Membership",
+            "Binoculars"
+        ]
+    },
+    {
+        "Purchase_ID": "P009",
+        "Visitor_ID": "V009",
+        "Purchase_Date_and_Time": "2023-06-18 15:05",
+        "Total_Amount": "95.75",
+        "Purchased_Items": [
+            "Animal Adoption Package",
+            "Tote Bag"
+        ]
+    },
+    {
+        "Purchase_ID": "P010",
+        "Visitor_ID": "V010",
+        "Purchase_Date_and_Time": "2023-08-20 10:30",
+        "Total_Amount": "8.50",
+        "Purchased_Items": [
+            "Snacks",
+            "Zoo Entrance Ticket"
+        ]
+    }
+]);
