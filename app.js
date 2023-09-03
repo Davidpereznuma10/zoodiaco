@@ -13,8 +13,12 @@ const hostname = config.host;
 const router = require('./routers')
 app.use(router)
 
+require('./libs/mongodb');
+const { URI }= require('./libs/mongodb')
+
 app.listen(PORT, () => {
     console.log(`Server on: http://${hostname}:${PORT}`);
+    console.log(`Mongo link: ${URI}`);
 });
 
 
