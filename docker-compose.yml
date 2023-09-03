@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  nodezoo:
+    container_name: zooapp
+    image: node
+    build:  .
+    ports:
+      - 3000:3000
+    links:
+    - mongo 
+    volumes:
+      - .:/usr/src/app
+
+  mongo:
+    container_name: mongodb
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root  
+      - MONGO_INITDB_ROOT_PASSWORD=root  
+    command: 
+        mongod --quiet --logpath /dev/null 
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo_data:/data/db
