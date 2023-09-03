@@ -1,15 +1,26 @@
 {
   "name": "zoodiaco",
   "version": "1.0.0",
-  "description": "<h1 align=\"center\">ZOODIACO</h1>",
+  "description": "A comprehensive MongoDB-powered database for zoo management, handling data on animals, employees, species, enclosures, visitors, and purchases.",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
     "test-mongodb": "node test/test-mongodb.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "zoo",
+    "database",
+    "MongoDB",
+    "NoSQL",
+    "management",
+    "animals",
+    "employees",
+    "species",
+    "enclosures",
+    "visitors",
+    "purchases"],
+  "author": "David Pérez Numa, Santiago Bernal",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
