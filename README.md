@@ -78,3 +78,101 @@ This project involves a database for managing zoo information, including details
 ---
 
 **Note**: This project uses MongoDB as a NoSQL database management system to store and query zoo information.
+
+---
+
+<h1 align="center">PREREQUISITES</h1>
+
+Before using Zoodiaco, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/es).
+- [Docker](https://www.docker.com/).
+
+## Installation
+
+1. **Clone this repository**:
+
+   ```bash
+   git clone https://github.com/Davidpereznuma10/zoodiaco.git
+   cd zoodiaco
+   ```
+
+2. **Install project dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Copy the example environment variable file and configure it**:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Edit the `.env` file with the appropriate settings.
+
+## Configuration
+
+1. **Ensure you configure the `.env` file** with the correct values for your environment lik [`.env.example`](https://github.com/Davidpereznuma10/zoodiaco/blob/Master/.env.example):
+
+   ```env
+   # Config
+   PORT=3000
+   HOST=127.9.63.7
+
+   # Mongo
+   DB_USER=root
+   DB_PASSWORD=root
+   DB_HOST=dbzoo.yjgbw2a.mongodb.net
+   DB_NAME=db_zoo
+   DB_PORT=27017
+   ```
+
+2. **Make sure you have Docker installed on your system**. If you haven't already installed it, you can download Docker from [Docker](https://www.docker.com/get-started).
+
+3. **At the root of the project, use the following command to build the container image**:
+
+   ```bash
+   sudo docker-compose build
+   ```
+
+   This will generate the container image using the configuration defined in the `docker-compose.yml` file.
+
+## Execution
+
+To run Zoodiaco in a Docker container, follow these steps:
+
+1. Once the image has been successfully built, **start the container with the following command**:
+
+   ```bash
+   docker-compose up
+   ```
+
+   This will launch the Zoodiaco application and the MongoDB database in separate containers and connect them automatically.
+
+2. When you want to **stop and remove the containers**, use the following command:
+
+   ```bash
+   docker-compose down
+   ```
+
+   This will shut down the containers and remove associated resources.
+
+## Verification
+
+Once you have run the application, you can verify its status in the console. If it has executed successfully, you will see the following information:
+
+- **Server on:** This link will take you to the web application server.
+- **Mongo link:** This link will provide you with information about the MongoDB database connection, but it will not reveal the direct connection details.
+
+Example:
+
+```bash
+Server on: http://hostname:PORT
+Mongo link: mongodb+srv://<user>:<password>@<host>/<database>?retryWrites=true&w=majority
+```
+
+These links will allow you to access the web application server and obtain information about the database connection without revealing the details of the direct connection.
+
+For more details about container configuration and environment variables, refer to the [`docker.md`](https://github.com/Davidpereznuma10/zoodiaco/blob/Master/docker.md) file.
+

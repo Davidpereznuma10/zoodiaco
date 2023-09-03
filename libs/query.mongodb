@@ -1,4 +1,5 @@
-use("db_zoo");
+const database = 'db_zoo'
+use(database)
 db.createCollection("Animals");
 db.Animals.insertMany([
     {
@@ -83,7 +84,7 @@ db.Animals.insertMany([
     }
 ]);
 
-use("db_zoo");
+use(database)
 db.createCollection("Employees");
 db.Employees.insertMany([
     {
@@ -158,7 +159,7 @@ db.Employees.insertMany([
     }
 ]);
 
-use("db_zoo");
+use(database)
 db.createCollection("Species");
 db.Species.insertMany([
     {
@@ -213,7 +214,7 @@ db.Species.insertMany([
     }
 ]);
 
-use("db_zoo");
+use(database)
 db.createCollection("Enclosures");
 db.Enclosures.insertMany([
     {
@@ -278,7 +279,7 @@ db.Enclosures.insertMany([
     }
 ]);
 
-use("db_zoo");
+use(database)
 db.createCollection("Visitors");
 db.Visitors.insertMany([
     {
@@ -353,7 +354,7 @@ db.Visitors.insertMany([
     }
 ]);
 
-use("db_zoo");
+use(database)
 db.createCollection("Purchases");
 db.Purchases.insertMany([
     {
