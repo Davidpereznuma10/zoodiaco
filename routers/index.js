@@ -1,8 +1,22 @@
-const { Router } = require('express');
-const  router = Router()
+const animals = require('./animals_routers');
+const employees = require('./employees_routers');
+const enclosures = require('./enclosures_routers');
+const purchases = require('./purchases_routers');
+const species = require('./species_routers');
+const visitors = require('./visitors_routers');
+const express = require('express');
 
-router.get('/',(req, res)=>{
-    console.log('Hola mundo!');
-})
 
-module.exports =  router
+function routerApi(app){
+    const router = express.Router();
+    app.use('/api/v1', router);
+
+    router.use('/animals',animals);
+    router.use('/employees',employees);
+    router.use('/enclosures',enclosures);
+    router.use('/purchases',purchases);
+    router.use('/species',species);
+    router.use('/visitors',visitors);
+}
+
+module.exports = routerApi;
