@@ -62,6 +62,12 @@ class MongoLib {
         })
         .then(() => `The order with the ID: ${_id} has been deleted`);
     }
+
+    getUser(collection, id, pw) {
+        return this.connect().then(db => {
+        return db.collection(collection).findOne({ Employee_ID: id, Name: pw });
+        });
+    }
 }
 
 module.exports = { MongoLib, URI};
