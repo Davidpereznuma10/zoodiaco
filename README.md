@@ -176,3 +176,10 @@ These links will allow you to access the web application server and obtain infor
 
 For more details about container configuration and environment variables, refer to the [`docker.md`](https://github.com/Davidpereznuma10/zoodiaco/blob/Master/docker.md) file.
 
+
+## API Documentation
+
+The complete API documentation is available in the [api.md](https://github.com/Davidpereznuma10/zoodiaco/blob/Master/api.md) file.
+
+Make sure to review the documentation for detailed information on routes, available collections, and how to perform queries.
+
