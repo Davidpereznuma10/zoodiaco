@@ -176,3 +176,30 @@ These links will allow you to access the web application server and obtain infor
 
 For more details about container configuration and environment variables, refer to the [`docker.md`](https://github.com/Davidpereznuma10/zoodiaco/blob/Master/docker.md) file.
 
+
+# Generate token
+
+To generate the token, you must go to the route: `http://127.9.63.7:3000/login`
+
+- If you want permission to all endpoints in the **req.body** you must put this data:
+
+   ```json
+   {
+   "id": "E001",
+   "pw": "John Smith"
+   }
+- ***Optional*** There is another user who only has permissions for the get endpoints:
+   ```json
+   {
+      "id": "E002",
+      "pw": "Emily Johnson"
+   }
+   ```
+# Use the token:
+1. To use the token, you must copy it first:
+<img src="./assets/Ejemplo.png">
+
+2. You must place it in Headers in the Authorization section as in this example:
+<img src="./assets/Ejemplo2.png">
+
+Now you can access the endpoints that your user allows you to.
