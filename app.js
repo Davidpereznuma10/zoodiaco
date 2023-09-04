@@ -1,23 +1,26 @@
-const express = require('express')
+const express = require('express');
 const dotenv = require('dotenv');
-const { config } = require('./config/config')
+const { config } = require('./config/config');
+const routerApi = require('./routers/');
+const { logErrors, errorHanlder, boomError }=require('./middlewares/error.handler')
 
-const app = express()
-app.use(express.json)
 dotenv.config();
+const app = express()
 
 const PORT = config.port;
 const hostname = config.host;
 
+app.use(express.json())
+routerApi(app)
 
-const router = require('./routers')
-app.use(router)
-
-require('./libs/mongodb');
 const { URI }= require('./libs/mongodb')
 
+app.use(logErrors);
+app.use(boomError);
+app.use(errorHanlder);
+
 app.listen(PORT, () => {
-    console.log(`Server on: http://${hostname}:${PORT}`);
+    console.log(`Server on: http://${hostname}:${PORT}/api/v1`);
     console.log(`Mongo link: ${URI}`);
 });
 
