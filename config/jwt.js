@@ -22,7 +22,7 @@ class EmployeesCollection {
         }
     }
     async generateToken (req,res) {
-        if(Object.keys(req.body).length === 0) throw {status:400,message:"Datos no ingresados"}
+        if(Object.keys(req.body).length === 0) throw {status:400,message:"Data not entered"}
         else{
             const {id, pw} = req.body
             const result = await this.find(id, pw);
@@ -45,7 +45,7 @@ class EmployeesCollection {
     async verifyToken (req, res) {
         const { authorization } = req.headers;
         if (!authorization)
-          throw {status: 400, message: "Porfavor generar Token"}
+          throw {status: 400, message: "Please generate Token"}
           try {
             const encoder = new TextEncoder();
             req.data = await jwtVerify(
@@ -54,8 +54,8 @@ class EmployeesCollection {
             );
             return req.data;
           } catch (error) {
-            throw {status:498, message: "Algo salio mal, generar un nuevo token"}
-          } 
+            throw {status:498, message: "Something is wrong, generate new token"}
+          }
       }
 }
 

@@ -4,9 +4,14 @@ const validatorHandler = require('../middlewares/validator.handler');
 const { createAnimal, updateAnimal, getAnimal } = require('../validators/animals_dto');
 const router = express.Router();
 const service = new AnimalsService();
+const { EmployeesCollection } = require("../config/jwt.js")
+const {validatePermisos} = require("../helpers/validatePermisos.js")
+const service2 = new EmployeesCollection();
 
 router.get('/', async(req, res, next)=>{
     try {
+        const validate = await service2.verifyToken(req,res)
+        const permisos = await validatePermisos(validate, "get");
         const animals = await service.find();
         res.status(200).json(animals);
     } catch (error) {
